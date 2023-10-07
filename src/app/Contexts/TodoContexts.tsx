@@ -34,8 +34,8 @@ export default function TodoContexts({ children }: TodoContextsProps) {
  [
   {
     todo:"Add a todo",
+    
     id:0,
-    checked:false,
   }
 ]
   const[state,dispatch] = useReducer(reducer,initalState)
