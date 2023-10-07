@@ -14,12 +14,9 @@ export default function Todo({}: Props) {
   const handleAddTodo = (data:any) => {
     
  setID(id+1)
-
-    console.log(data.name)
+  console.log(data.name)
     dispatch({ type: 'add-todo', payload: data.name,
-    newId:id});
-
-    
+    newId:id});   
     // Perform any other actions you need with the data (e.g., dispatching to context)
   };
 
@@ -32,12 +29,9 @@ export default function Todo({}: Props) {
         <div className='flex'>
           
               <input name='name'{...register('name')}
-            
                 
                 className='text-black font-bold text-2xl border-xl'
               />
-        
-          
           <button
             type='submit'
             onClick={handleAddTodo}
@@ -47,7 +41,7 @@ export default function Todo({}: Props) {
           </button>
         </div>
         <div className='mt-10 mr-5'>
-          <AddTodo/>
+          {state.map((item:any,index:number)=>(<AddTodo key={index} id={item.id} todo={item.todo}/>))}
         </div>
       </form>
     </div>
