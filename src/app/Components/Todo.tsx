@@ -13,7 +13,7 @@ export default function Todo({}: Props) {
   
   const handleAddTodo = (data:any) => {
     
- setID(id+1)
+    const newId = state.length; 
   console.log(data.name)
     dispatch({ type: 'add-todo', payload: data.name,
     newId:id});   
@@ -33,8 +33,7 @@ export default function Todo({}: Props) {
                 className='text-black font-bold text-2xl border-xl'
               />
           <button
-            type='submit'
-            onClick={handleAddTodo}
+            
             className='ml-2 bg-red-500 b-5 hover:bg-red-900'
           >
             AddTodo
